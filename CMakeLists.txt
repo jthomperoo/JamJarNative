@@ -48,17 +48,6 @@ endif()
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-if (EMSCRIPTEN)
-    set(CMAKE_CXX_FLAGS  "-s USE_SDL=2")
-else()
-    # This is a bit of a hacky workaround, the CI runner is Ubuntu based, and the SDL2 library in Ubuntu doesn't play
-    # nice with clang, so the SDL2 path needs to be manually included, see here:
-    # https://bugs.launchpad.net/ubuntu/+source/libsdl2-ttf/+bug/1872023
-    if(DEFINED ENV{CI})
-        set(CMAKE_CXX_FLAGS "-I/usr/include/SDL2 -I${CMAKE_SOURCE_DIR}/build/_deps/stb_image-src -I${CMAKE_SOURCE_DIR}/build/_deps/box2d-src/include -I${CMAKE_SOURCE_DIR}/build/_deps/catch2-src/src -I${CMAKE_SOURCE_DIR}/include")
-    endif()
-endif()
-
 set(LIB_SOURCES
     src/stb_image.cpp
     src/game.cpp

@@ -44,8 +44,6 @@ See the [examples directory for working code examples](./examples).
 
 **Dev Dependencies**
 
-- [Catch2](https://github.com/catchorg/Catch2) - BSL-1.0
-- [Emscripten](https://github.com/emscripten-core/emscripten) - MIT/UIUC
 - [llvm/clang/clang-tidy/clang-format](https://llvm.org/) - UIUC/Apache-2.0 with LLVM Exceptions
 - [CMake](https://cmake.org/) - BSD-3
 
